@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-soft-black;
+    @apply font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .artwork-container {
+    @apply max-w-[800px] mx-auto;
+    @apply transition-all duration-400 ease-out;
+  }
+
+  .artwork-container:hover {
+    @apply scale-105;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Disable hover on touch devices */
+  @media (hover: none) {
+    .artwork-container:hover {
+      @apply scale-100;
+      box-shadow: none;
+    }
+  }
+}
