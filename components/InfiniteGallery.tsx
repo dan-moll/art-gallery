@@ -41,7 +41,7 @@ export default function InfiniteGallery({ initialArtworks, allArtworks }: Infini
           {/* Gallery Title */}
           <div className="text-center mb-16 md:mb-20">
             <h2 className="font-serif text-2xl md:text-3xl text-white tracking-wide">
-              "Art is Fantasy and Fantasy is Art"
+              &ldquo;Art is Fantasy and Fantasy is Art&rdquo;
             </h2>
             <p className="font-sans text-sm md:text-base text-gray-400 mt-2">
               by Helmut
