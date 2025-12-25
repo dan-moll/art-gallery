@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -12,13 +13,28 @@ export default function About() {
               About the Artist
             </h1>
 
+            <div className="mb-10">
+              <Image
+                src="/about_the_artist.jpeg"
+                alt="Helmut Relinger"
+                width={2592}
+                height={1458}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
+
             <div className="font-sans text-base md:text-lg text-soft-black leading-relaxed space-y-6">
               <p>
-                Helmut Relinger lives in Berkeley, California, where he has maintained a psychology practice for over four decades. Throughout his career, he has used art as a parallel language—one that speaks in jarring color shifts, collaged textures, and geometric disruptions rather than words. His mixed media compositions fragment and reassemble visual space, mirroring the way consciousness itself operates: not in smooth transitions, but in sudden breaks, overlapping layers, and unexpected juxtapositions.
+                Dr. Relinger is a Clinical Psychologist practicing in Berkeley, California for over 40 years. He has been fascinated by unusual art, since 1969, when he met his college roommate, an art major, specializing in bizarre erotic art.
               </p>
 
               <p>
-                His canvases refuse comfort. Neon greens collide with deep maroons. Smooth paint abuts rough canvas and metallic foil. Sharp diagonals slice through carefully constructed fields, creating tension that never fully resolves. Relinger's work doesn't guide the viewer toward clarity—it asks them to sit with dissonance, to find meaning in the collision of incompatible elements, and to recognize that sometimes the most honest representation of inner life is one that disrupts rather than soothes.
+                Over the past 30 years, Dr. Relinger and his wife, Kathryn, have visited famous art museums in more than 35 countries.
+              </p>
+
+              <p>
+                Having no formal training, or even any idea of what he was doing, Helmut has painted over 200 canvases, since 2015.
               </p>
             </div>
 

@@ -1,10 +1,25 @@
 import Image from 'next/image';
 import type { ArtworkCardProps } from '@/lib/types';
 
-export default function ArtworkCard({ artwork }: ArtworkCardProps) {
+interface ArtworkCardWithClickProps extends ArtworkCardProps {
+  onClick?: () => void;
+}
+
+export default function ArtworkCard({ artwork, onClick }: ArtworkCardWithClickProps) {
   return (
     <article className="artwork-card mb-20 md:mb-artwork-gap">
-      <div className="artwork-container group cursor-default">
+      <div
+        className="artwork-container group cursor-pointer"
+        onClick={onClick}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onClick?.();
+          }
+        }}
+      >
         <Image
           src={`/artworks/${artwork.filename}`}
           alt={`${artwork.title} by ${artwork.artistName}`}
