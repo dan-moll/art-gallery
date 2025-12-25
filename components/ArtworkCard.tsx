@@ -35,10 +35,10 @@ export default function ArtworkCard({ artwork, onClick }: ArtworkCardWithClickPr
       </div>
 
       <div className="artwork-label mt-6 md:mt-8 text-center max-w-[600px] mx-auto px-6">
-        <h2 className="font-serif text-base md:text-lg text-soft-black tracking-wide">
+        <h2 className="font-serif text-base md:text-lg text-gray-200 tracking-wide">
           {artwork.title}
         </h2>
-        <p className="font-sans text-xs md:text-sm text-light-gray mt-2">
+        <p className="font-sans text-xs md:text-sm text-gray-500 mt-2">
           {artwork.medium}
         </p>
       </div>

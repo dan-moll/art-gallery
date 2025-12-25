@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import ArtworkCard from './ArtworkCard';
 import ArtworkModal from './ArtworkModal';
 import type { Artwork } from '@/lib/types';
@@ -39,6 +38,16 @@ export default function InfiniteGallery({ initialArtworks, allArtworks }: Infini
     <>
       <div className="max-w-7xl mx-auto px-6 md:px-20 py-12 md:py-16">
         <div className="flex flex-col items-center">
+          {/* Gallery Title */}
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="font-serif text-2xl md:text-3xl text-white tracking-wide">
+              "Art is Fantasy and Fantasy is Art"
+            </h2>
+            <p className="font-sans text-sm md:text-base text-gray-400 mt-2">
+              by Helmut
+            </p>
+          </div>
+
           {displayedArtworks.map((artwork) => (
             <ArtworkCard
               key={artwork.id}
@@ -47,22 +56,16 @@ export default function InfiniteGallery({ initialArtworks, allArtworks }: Infini
             />
           ))}
 
-          {/* End of collection */}
-          <div className="text-center py-16">
-            <p className="font-sans text-sm text-light-gray">
-              End of collection
-            </p>
+          {/* Separator line */}
+          <div className="w-full max-w-[600px] my-16">
+            <div className="h-px bg-gray-800"></div>
           </div>
 
-          {/* Old School Image */}
-          <div className="w-full max-w-[800px] mb-16">
-            <Image
-              src="/old_school.jpeg"
-              alt="Old School"
-              width={2430}
-              height={1712}
-              className="w-full h-auto"
-            />
+          {/* End of collection */}
+          <div className="text-center py-8 mb-16">
+            <p className="font-sans text-sm text-gray-500">
+              End of collection
+            </p>
           </div>
         </div>
       </div>
