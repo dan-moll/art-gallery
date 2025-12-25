@@ -25,10 +25,12 @@ export default function ArtworkCard({ artwork, onClick }: ArtworkCardWithClickPr
           alt={`${artwork.title} by ${artwork.artistName}`}
           width={artwork.width}
           height={artwork.height}
-          quality={90}
+          quality={80}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 700px, 800px"
           className="w-full h-auto"
           priority={parseInt(artwork.id) <= 3}
+          loading={parseInt(artwork.id) <= 3 ? 'eager' : 'lazy'}
+          decoding="async"
         />
       </div>
 

@@ -4,7 +4,8 @@ import { getAllArtworks } from '@/lib/artworks';
 
 export default function Home() {
   const allArtworks = getAllArtworks();
-  const initialArtworks = allArtworks.slice(0, 10);
+  // Load all artworks at once for zero scroll lag (only 26 images)
+  const initialArtworks = allArtworks;
 
   return (
     <>

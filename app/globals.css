@@ -27,18 +27,26 @@
   .artwork-container {
     @apply max-w-[800px] mx-auto;
     @apply transition-all duration-400 ease-out;
+    /* GPU acceleration for smoother animations */
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .artwork-container:hover {
-    @apply scale-105;
+    transform: scale(1.05) translateZ(0);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   }
 
   /* Disable hover on touch devices */
   @media (hover: none) {
     .artwork-container:hover {
-      @apply scale-100;
+      transform: scale(1) translateZ(0);
       box-shadow: none;
     }
+  }
+
+  /* Optimize image rendering for smooth scrolling */
+  img {
+    content-visibility: auto;
   }
 }
